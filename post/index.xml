@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Записничок</title>
+    <link>https://ihntk.github.io/post/</link>
+    <description>Recent content in Posts on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Dec 2021 09:00:20 +0200</lastBuildDate><atom:link href="https://ihntk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Зберігання паролів</title>
+      <link>https://ihntk.github.io/post/passman/</link>
+      <pubDate>Thu, 09 Dec 2021 09:00:20 +0200</pubDate>
+      
+      <guid>https://ihntk.github.io/post/passman/</guid>
+      <description>&lt;h2 id=&#34;keepassxc&#34;&gt;Keepassxc&lt;/h2&gt;
+&lt;p&gt;запустити кпсх, налаштування - загальне автоматично запускати + при закритті згортати до системного лотка, сполучення з переглядачем - вибрати браузер&lt;/p&gt;
+&lt;p&gt;експорт з хрома
+Налаштування &amp;gt; Паролі меню3точки експорт
+вказуємо назву сховища, погоджуємося з налаштуваннями, потім задаємо пароль&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rtorrent і Flood</title>
+      <link>https://ihntk.github.io/post/rtorrent/</link>
+      <pubDate>Fri, 10 Sep 2021 22:46:57 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/rtorrent/</guid>
+      <description>&lt;h2 id=&#34;установка-rtorrent&#34;&gt;Установка rTorrent&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;# pacman -S rtorrent
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Налаштування сервера</title>
+      <link>https://ihntk.github.io/post/server/</link>
+      <pubDate>Fri, 10 Sep 2021 21:29:21 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/server/</guid>
+      <description>&lt;h2 id=&#34;налаштування-віртуальної-машини&#34;&gt;Налаштування віртуальної машини&lt;/h2&gt;
+&lt;p&gt;В налаштуваннях vbox’а додаємо мережевий адаптер &amp;lsquo;vboxnet0&amp;rsquo; в розділі мережі хосту. В налаштуваннях віртуальної машини встановлюємо перший адаптер в NAT - для доступу в світ, другий адаптер - головний адаптер -&amp;gt; vboxnet0 для доступу з хоста в гість, третій - внутріштя мережа -&amp;gt; intnet для доступу до інших віртуальних машин&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Мінімальна установка Ubuntu і Kodi</title>
+      <link>https://ihntk.github.io/post/ubuntu-install/</link>
+      <pubDate>Sun, 22 Aug 2021 22:08:27 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/ubuntu-install/</guid>
+      <description>&lt;p&gt;З сайту &lt;a href=&#34;https://ubuntu.com/download/alternative-downloads&#34; target=&#34;_blank&#34;&gt;Ubuntu&lt;/a&gt; скачуємо mini.iso, установлюємо мінімальну систему, завантажуємося в неї.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wayland</title>
+      <link>https://ihntk.github.io/post/wayland/</link>
+      <pubDate>Sat, 21 Aug 2021 17:48:12 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/wayland/</guid>
+      <description>&lt;h2 id=&#34;sway&#34;&gt;Sway&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/swaywm/sway/wiki&#34; target=&#34;_blank&#34;&gt;https://github.com/swaywm/sway/wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;налаштування-графічних-тулкітів&#34;&gt;Налаштування графічних тулкітів&lt;/h2&gt;
+&lt;h3 id=&#34;gtk3&#34;&gt;GTK3&lt;/h3&gt;
+&lt;p&gt;скрипт для імпорту налаштувань з gtk3/settings.ini в gsettings - import-gsettings&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Archlinux</title>
+      <link>https://ihntk.github.io/post/archlinux/</link>
+      <pubDate>Sat, 21 Aug 2021 17:32:30 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/archlinux/</guid>
+      <description>&lt;h2 id=&#34;різне&#34;&gt;Різне&lt;/h2&gt;
+&lt;h3 id=&#34;nvidia&#34;&gt;Nvidia&lt;/h3&gt;
+&lt;p&gt;GeForce 8600 - для ядра lts потрібно встановити пакет nvidia-340xx-lts-dkms з AUR&lt;/p&gt;
+&lt;h3 id=&#34;bluetooth&#34;&gt;Bluetooth&lt;/h3&gt;
+&lt;p&gt;В arch потрібно втсаровити пакет pulseaudio-bluetooth і якийсь фронтенд для блютуса
+перезавантажити пульсаудіо, потім можна підключати пристрій&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Grub</title>
+      <link>https://ihntk.github.io/post/grub/</link>
+      <pubDate>Sat, 21 Aug 2021 17:11:08 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/grub/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/GRUB_%28%d0%a0%d1%83%d1%81%d1%81%d0%ba%d0%b8%d0%b9%29&#34; target=&#34;_blank&#34;&gt;Arch wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;установка-в-uefi&#34;&gt;Установка в UEFI&lt;/h2&gt;
+&lt;p&gt;Потрібно установити пакети grub і efibootmgr.&lt;br&gt;
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# grub-install
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wget</title>
+      <link>https://ihntk.github.io/post/wget/</link>
+      <pubDate>Sat, 21 Aug 2021 16:39:50 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/wget/</guid>
+      <description>&lt;h2 id=&#34;скачуємо-список-з-fsto&#34;&gt;Скачуємо список з fs.to&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;export LANG=«uk_UA.UTF8» (export LANG=«ru_RU.UTF8»)
+wget -i /path/to/url-file --restrict-file-names=unix,nocontrol
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;в результаті маємо скачані файли в назвах яких замість пробілів плюсики :)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Коротка інструкція з Hugo</title>
+      <link>https://ihntk.github.io/post/hugo-tutorial/</link>
+      <pubDate>Thu, 20 Aug 2020 23:05:06 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/hugo-tutorial/</guid>
+      <description>&lt;h2 id=&#34;створення-сайта&#34;&gt;Створення сайта&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site (path/to/)siteName 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;створює сайт (у вказаному шляху).
+Потрібно скопіювати тему в каталог themes/ і додати в файл конфіга:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;theme = &amp;quot;themeName&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cтворення артифакта Java</title>
+      <link>https://ihntk.github.io/post/create-java-artifact/</link>
+      <pubDate>Thu, 20 Aug 2020 22:43:32 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/create-java-artifact/</guid>
+      <description>&lt;p&gt;Заходимо в Project structure &amp;gt; Artifacts.
+Якщо є якийсь артифакт, видаляємо його(-) і натикаємо + &amp;gt; JAR &amp;gt; From modules with dependencies,
+вибираємо головний клас.
+Якщо до цього був якийсь маніфест, бажано його видалити, щоб ідея не лаялась &amp;gt;
+OK&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Замітки про Git</title>
+      <link>https://ihntk.github.io/post/git/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ihntk.github.io/post/git/</guid>
+      <description>&lt;p&gt;Для маніпуляції даними, git має в своєму розпорядження три сутності: HEAD, індекс і робочий каталог.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;HEAD&lt;/em&gt; - вказівник на останній коміт, що містить зміни (список і diff файлів).&lt;br&gt;
+&lt;em&gt;індекс&lt;/em&gt; - пропозиція наступного коміту, містить зміни, які можна закомітити (заповнюється змінами даних з робочого каталогу за допомогою команди &lt;code&gt;add&lt;/code&gt;).&lt;br&gt;
+&lt;em&gt;Робочий каталог&lt;/em&gt; - каталог файлової системи з поточними файлами.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Створення сайту на Jekyll</title>
+      <link>https://ihntk.github.io/post/install-jakyll-and-creating-site/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ihntk.github.io/post/install-jakyll-and-creating-site/</guid>
+      <description>&lt;p&gt;Спроба запустити блог на Jekyll&lt;/p&gt;
+&lt;h2 id=&#34;установка-jekyll&#34;&gt;Установка Jekyll&lt;/h2&gt;
+&lt;p&gt;Для запуску і налаштування сайту на компʼютері потрібно встановити Jekyll. Для цього в терміналі даємо команду:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# gem install jekyll 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

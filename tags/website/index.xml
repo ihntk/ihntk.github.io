@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>website on Записничок</title>
+    <link>https://ihntk.github.io/tags/website/</link>
+    <description>Recent content in website on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Aug 2020 23:05:06 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Коротка інструкція з Hugo</title>
+      <link>https://ihntk.github.io/post/hugo-tutorial/</link>
+      <pubDate>Thu, 20 Aug 2020 23:05:06 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/hugo-tutorial/</guid>
+      <description>&lt;h2 id=&#34;створення-сайта&#34;&gt;Створення сайта&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site (path/to/)siteName 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;створює сайт (у вказаному шляху).
+Потрібно скопіювати тему в каталог themes/ і додати в файл конфіга:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;theme = &amp;quot;themeName&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Створення сайту на Jekyll</title>
+      <link>https://ihntk.github.io/post/install-jakyll-and-creating-site/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ihntk.github.io/post/install-jakyll-and-creating-site/</guid>
+      <description>&lt;p&gt;Спроба запустити блог на Jekyll&lt;/p&gt;
+&lt;h2 id=&#34;установка-jekyll&#34;&gt;Установка Jekyll&lt;/h2&gt;
+&lt;p&gt;Для запуску і налаштування сайту на компʼютері потрібно встановити Jekyll. Для цього в терміналі даємо команду:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# gem install jekyll 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>torrent on Записничок</title>
+    <link>https://ihntk.github.io/tags/torrent/</link>
+    <description>Recent content in torrent on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Sep 2021 22:46:57 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/torrent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rtorrent і Flood</title>
+      <link>https://ihntk.github.io/post/rtorrent/</link>
+      <pubDate>Fri, 10 Sep 2021 22:46:57 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/rtorrent/</guid>
+      <description>&lt;h2 id=&#34;установка-rtorrent&#34;&gt;Установка rTorrent&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;# pacman -S rtorrent
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

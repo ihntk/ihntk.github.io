@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kodi on Записничок</title>
+    <link>https://ihntk.github.io/tags/kodi/</link>
+    <description>Recent content in kodi on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 Aug 2021 22:08:27 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/kodi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мінімальна установка Ubuntu і Kodi</title>
+      <link>https://ihntk.github.io/post/ubuntu-install/</link>
+      <pubDate>Sun, 22 Aug 2021 22:08:27 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/ubuntu-install/</guid>
+      <description>&lt;p&gt;З сайту &lt;a href=&#34;https://ubuntu.com/download/alternative-downloads&#34; target=&#34;_blank&#34;&gt;Ubuntu&lt;/a&gt; скачуємо mini.iso, установлюємо мінімальну систему, завантажуємося в неї.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

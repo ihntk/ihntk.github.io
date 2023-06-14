@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>boot on Записничок</title>
+    <link>https://ihntk.github.io/tags/boot/</link>
+    <description>Recent content in boot on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Aug 2021 17:11:08 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grub</title>
+      <link>https://ihntk.github.io/post/grub/</link>
+      <pubDate>Sat, 21 Aug 2021 17:11:08 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/grub/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/GRUB_%28%d0%a0%d1%83%d1%81%d1%81%d0%ba%d0%b8%d0%b9%29&#34; target=&#34;_blank&#34;&gt;Arch wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;установка-в-uefi&#34;&gt;Установка в UEFI&lt;/h2&gt;
+&lt;p&gt;Потрібно установити пакети grub і efibootmgr.&lt;br&gt;
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# grub-install
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

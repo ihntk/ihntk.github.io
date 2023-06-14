@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Записничок</title>
+    <link>https://ihntk.github.io/tags/linux/</link>
+    <description>Recent content in linux on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Sep 2021 21:29:21 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Налаштування сервера</title>
+      <link>https://ihntk.github.io/post/server/</link>
+      <pubDate>Fri, 10 Sep 2021 21:29:21 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/server/</guid>
+      <description>&lt;h2 id=&#34;налаштування-віртуальної-машини&#34;&gt;Налаштування віртуальної машини&lt;/h2&gt;
+&lt;p&gt;В налаштуваннях vbox’а додаємо мережевий адаптер &amp;lsquo;vboxnet0&amp;rsquo; в розділі мережі хосту. В налаштуваннях віртуальної машини встановлюємо перший адаптер в NAT - для доступу в світ, другий адаптер - головний адаптер -&amp;gt; vboxnet0 для доступу з хоста в гість, третій - внутріштя мережа -&amp;gt; intnet для доступу до інших віртуальних машин&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Мінімальна установка Ubuntu і Kodi</title>
+      <link>https://ihntk.github.io/post/ubuntu-install/</link>
+      <pubDate>Sun, 22 Aug 2021 22:08:27 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/ubuntu-install/</guid>
+      <description>&lt;p&gt;З сайту &lt;a href=&#34;https://ubuntu.com/download/alternative-downloads&#34; target=&#34;_blank&#34;&gt;Ubuntu&lt;/a&gt; скачуємо mini.iso, установлюємо мінімальну систему, завантажуємося в неї.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wayland</title>
+      <link>https://ihntk.github.io/post/wayland/</link>
+      <pubDate>Sat, 21 Aug 2021 17:48:12 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/wayland/</guid>
+      <description>&lt;h2 id=&#34;sway&#34;&gt;Sway&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/swaywm/sway/wiki&#34; target=&#34;_blank&#34;&gt;https://github.com/swaywm/sway/wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;налаштування-графічних-тулкітів&#34;&gt;Налаштування графічних тулкітів&lt;/h2&gt;
+&lt;h3 id=&#34;gtk3&#34;&gt;GTK3&lt;/h3&gt;
+&lt;p&gt;скрипт для імпорту налаштувань з gtk3/settings.ini в gsettings - import-gsettings&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Archlinux</title>
+      <link>https://ihntk.github.io/post/archlinux/</link>
+      <pubDate>Sat, 21 Aug 2021 17:32:30 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/archlinux/</guid>
+      <description>&lt;h2 id=&#34;різне&#34;&gt;Різне&lt;/h2&gt;
+&lt;h3 id=&#34;nvidia&#34;&gt;Nvidia&lt;/h3&gt;
+&lt;p&gt;GeForce 8600 - для ядра lts потрібно встановити пакет nvidia-340xx-lts-dkms з AUR&lt;/p&gt;
+&lt;h3 id=&#34;bluetooth&#34;&gt;Bluetooth&lt;/h3&gt;
+&lt;p&gt;В arch потрібно втсаровити пакет pulseaudio-bluetooth і якийсь фронтенд для блютуса
+перезавантажити пульсаудіо, потім можна підключати пристрій&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Grub</title>
+      <link>https://ihntk.github.io/post/grub/</link>
+      <pubDate>Sat, 21 Aug 2021 17:11:08 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/grub/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/GRUB_%28%d0%a0%d1%83%d1%81%d1%81%d0%ba%d0%b8%d0%b9%29&#34; target=&#34;_blank&#34;&gt;Arch wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;установка-в-uefi&#34;&gt;Установка в UEFI&lt;/h2&gt;
+&lt;p&gt;Потрібно установити пакети grub і efibootmgr.&lt;br&gt;
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# grub-install
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

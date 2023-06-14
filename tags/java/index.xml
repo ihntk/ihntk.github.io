@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Записничок</title>
+    <link>https://ihntk.github.io/tags/java/</link>
+    <description>Recent content in java on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Aug 2020 22:43:32 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cтворення артифакта Java</title>
+      <link>https://ihntk.github.io/post/create-java-artifact/</link>
+      <pubDate>Thu, 20 Aug 2020 22:43:32 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/create-java-artifact/</guid>
+      <description>&lt;p&gt;Заходимо в Project structure &amp;gt; Artifacts.
+Якщо є якийсь артифакт, видаляємо його(-) і натикаємо + &amp;gt; JAR &amp;gt; From modules with dependencies,
+вибираємо головний клас.
+Якщо до цього був якийсь маніфест, бажано його видалити, щоб ідея не лаялась &amp;gt;
+OK&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

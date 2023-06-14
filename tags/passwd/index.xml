@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>passwd on Записничок</title>
+    <link>https://ihntk.github.io/tags/passwd/</link>
+    <description>Recent content in passwd on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Dec 2021 09:00:20 +0200</lastBuildDate><atom:link href="https://ihntk.github.io/tags/passwd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Зберігання паролів</title>
+      <link>https://ihntk.github.io/post/passman/</link>
+      <pubDate>Thu, 09 Dec 2021 09:00:20 +0200</pubDate>
+      
+      <guid>https://ihntk.github.io/post/passman/</guid>
+      <description>&lt;h2 id=&#34;keepassxc&#34;&gt;Keepassxc&lt;/h2&gt;
+&lt;p&gt;запустити кпсх, налаштування - загальне автоматично запускати + при закритті згортати до системного лотка, сполучення з переглядачем - вибрати браузер&lt;/p&gt;
+&lt;p&gt;експорт з хрома
+Налаштування &amp;gt; Паролі меню3точки експорт
+вказуємо назву сховища, погоджуємося з налаштуваннями, потім задаємо пароль&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.112.3">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Rtorrent і Flood - Записничок</title>
+
+
+<meta name="author" content="Ihor" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="torrent" />
+
+
+<meta property="og:title" content="Rtorrent і Flood" />
+<meta name="twitter:title" content="Rtorrent і Flood" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ihntk.github.io/post/rtorrent/" /><meta property="og:description" content="Установка rTorrent
+# pacman -S rtorrent
+" />
+<meta name="twitter:description" content="Установка rTorrent
+# pacman -S rtorrent
+" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-09-10T22:46:57+03:00" /><meta property="article:modified_time" content="2021-09-10T22:46:57+03:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://ihntk.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://ihntk.github.io/">Записничок</a>
+            
+            <span class="title-sub">Різні замітки.</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://ihntk.github.io/post/rtorrent/">Rtorrent і Flood</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-09-10</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;293 слів</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/torrent">torrent</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <h2 id="установка-rtorrent">Установка rTorrent</h2>
+<pre><code># pacman -S rtorrent
+</code></pre>
+<h2 id="налаштування-rtorrent">Налаштування rTorrent</h2>
+<p>В даному прикладі використовується настройка для користувача sdbox</p>
+<h3 id="робочі-каталоги-rtorrent">Робочі каталоги rTorrent</h3>
+<pre><code>$ mkdir -p ~/.local/share/rtorrent
+$ mkdir -p ~/Downloads/tor/{music,packages/win,videos/{films,mult,series}} 
+$ mkdir -p /home/sdbox/{Music,packages/win,Videos/{Films,Cartoons,Series}}
+</code></pre>
+<h3 id="файл-конфігурації">файл конфігурації</h3>
+<p><code>nvim .rtorrent.rc</code></p>
+<pre><code>session.path.set = /home/sdbox/.local/share/rtorrent
+network.scgi.open_local = /home/sdbox/.local/share/rtorrent/rtorrent.sock
+execute.nothrow = chmod,770,/home/sdbox/.local/share/rtorrent/rtorrent.sock
+
+schedule2 = watch_directory_1,10,10,&quot;load.start=/home/sdbox/Downloads/tor/music/*.torrent,d.directory.set=/home/sdbox/Music&quot;
+schedule2 = watch_directory_2,10,10,&quot;load.start=/home/sdbox/Downloads/tor/packages/*.torrent,d.directory.set=/home/sdbox/packages&quot;
+schedule2 = watch_directory_3,10,10,&quot;load.start=/home/sdbox/Downloads/tor/packages/win*.torrent,d.directory.set=/home/sdbox/packages/win&quot;
+schedule2 = watch_directory_4,10,10,&quot;load.start=/home/sdbox/Downloads/tor/videos/films/*.torrent,d.directory.set=/home/sdbox/Videos/Films&quot;
+schedule2 = watch_directory_5,10,10,&quot;load.start=/home/sdbox/Downloads/tor/videos/mult/*.torrent,d.directory.set=/home/sdbox/Videos/Cartoons&quot;
+schedule2 = watch_directory_6,10,10,&quot;load.start=/home/sdbox/Downloads/tor/videos/series/*.torrent,d.directory.set=/home/sdbox/Videos/Series&quot;
+
+schedule2 = low_diskspace,5,60,close_low_diskspace=1000M
+pieces.hash.on_completion.set = yes
+</code></pre>
+<h2 id="автозапуск-rtorrent">Автозапуск rTorrent</h2>
+<h3 id="users-service">Users service</h3>
+<p>Запуститься лише після того як користувач увійде в систему. Підходить для медіацетра Kodi<br>
+path <code>~/.config/systemd/user/rtorrent.service</code></p>
+<pre><code>[Unit]
+Description=rtorrent
+After=network.target
+
+[Service]
+Type=forking
+ExecStartPre=/usr/bin/bash -c &quot;if test -e ~/.local/share/rtorrent/rtorrent.lock &amp;&amp; test -z `pidof rtorrent`; then rm -f ~/.local/share/rtorrent/rtorrent.lock; fi&quot;
+ExecStart=/usr/bin/tmux -L rt new-session -s rt -n rtorrent -d rtorrent 
+ExecStop=/usr/bin/bash -c &quot;/usr/bin/tmux -L rt send-keys -t rt:rtorrent.0 C-q; while pidof rtorrent &gt; /dev/null; do echo stopping rtorrent...; sleep 1; done&quot;
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+</code></pre>
+<p>Запуск <code>systemctl --user enable --now rtorrent</code></p>
+<h3 id="system-service">System service</h3>
+<p>Цей варіант підходить для безголового сервера<br>
+path <code>/etc/systemd/system/rtorrent@.service</code></p>
+<pre><code>[Unit]
+Description=rTorrent Daemon for %i
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i
+ExecStartPre=/bin/rm -f /home/%i/.local/share/rtorrent/rtorrent.lock
+ExecStart=/usr/bin/rtorrent -o system.daemon.set=true
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Запуск <code>systemctl enable --now rtorrent@user</code></p>
+<h2 id="установка-flood">Установка Flood</h2>
+<h3 id="arch">Arch</h3>
+<p>$ yay -S flood-git
+Користувач flood створиться під час установки пакета автоматично
+В файлі /etc/flood/config.js потрібно встановити значення &lsquo;0.0.0.0&rsquo;, щоб мати доступ до сервера з інших компʼютерів</p>
+<pre><code>floodServerHost: '0.0.0.0',
+</code></pre>
+<p>flood service також установлюється з пакетом
+Запуск <code>systemctl enable --now flood</code></p>
+<h3 id="armbian">Armbian</h3>
+<p><a href="https://github.com/jesec/flood/wiki/Install-Flood-on-Debian,-Ubuntu-and-derivatives" target="_blank">Flood Wiki</a></p>
+<p>Встановлюємо nodejs</p>
+<pre><code>curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
+</code></pre>
+<p>Далі я розпакував flood з пакету зібраного для Arch в корінь /, щоб не тягти в залежностях npm<br>
+Для запуску замінив service <code>/lib/systemd/system/flood@.service</code></p>
+<pre><code>[Unit]
+Description=Flood service for %I
+After=network.target
+
+[Service]
+User=%I
+Group=%I
+Type=simple
+KillMode=process
+ExecStart=/usr/bin/env flood --host=&quot;0.0.0.0&quot;
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Запуск <code>systemctl enable --now flood@user</code></p>
+<h2 id="посилання">Посилання</h2>
+<p><a href="https://rawsec.ml/en/archlinux-install-rtorrent-flood-sftp/" target="_blank">https://rawsec.ml/en/archlinux-install-rtorrent-flood-sftp/</a>
+<a href="https://github.com/Flood-UI/flood/wiki/Install-flood-with-a-service-account" target="_blank">https://github.com/Flood-UI/flood/wiki/Install-flood-with-a-service-account</a></p>
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#установка-rtorrent">Установка rTorrent</a></li>
+    <li><a href="#налаштування-rtorrent">Налаштування rTorrent</a>
+      <ul>
+        <li><a href="#робочі-каталоги-rtorrent">Робочі каталоги rTorrent</a></li>
+        <li><a href="#файл-конфігурації">файл конфігурації</a></li>
+      </ul>
+    </li>
+    <li><a href="#автозапуск-rtorrent">Автозапуск rTorrent</a>
+      <ul>
+        <li><a href="#users-service">Users service</a></li>
+        <li><a href="#system-service">System service</a></li>
+      </ul>
+    </li>
+    <li><a href="#установка-flood">Установка Flood</a>
+      <ul>
+        <li><a href="#arch">Arch</a></li>
+        <li><a href="#armbian">Armbian</a></li>
+      </ul>
+    </li>
+    <li><a href="#посилання">Посилання</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#установка-rtorrent">Установка rTorrent</a></li>
+    <li><a href="#налаштування-rtorrent">Налаштування rTorrent</a>
+      <ul>
+        <li><a href="#робочі-каталоги-rtorrent">Робочі каталоги rTorrent</a></li>
+        <li><a href="#файл-конфігурації">файл конфігурації</a></li>
+      </ul>
+    </li>
+    <li><a href="#автозапуск-rtorrent">Автозапуск rTorrent</a>
+      <ul>
+        <li><a href="#users-service">Users service</a></li>
+        <li><a href="#system-service">System service</a></li>
+      </ul>
+    </li>
+    <li><a href="#установка-flood">Установка Flood</a>
+      <ul>
+        <li><a href="#arch">Arch</a></li>
+        <li><a href="#armbian">Armbian</a></li>
+      </ul>
+    </li>
+    <li><a href="#посилання">Посилання</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023
+                <a href="https://ihntk.github.io/">Ihor</a>
+                
+                | Працює на <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

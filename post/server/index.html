@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.112.3">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Налаштування сервера - Записничок</title>
+
+
+<meta name="author" content="Ihor" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="linux, nginx, ssh" />
+
+
+<meta property="og:title" content="Налаштування сервера" />
+<meta name="twitter:title" content="Налаштування сервера" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ihntk.github.io/post/server/" /><meta property="og:description" content="Налаштування віртуальної машини
+В налаштуваннях vbox’а додаємо мережевий адаптер &lsquo;vboxnet0&rsquo; в розділі мережі хосту. В налаштуваннях віртуальної машини встановлюємо перший адаптер в NAT - для доступу в світ, другий адаптер - головний адаптер -&gt; vboxnet0 для доступу з хоста в гість, третій - внутріштя мережа -&gt; intnet для доступу до інших віртуальних машин" />
+<meta name="twitter:description" content="Налаштування віртуальної машини
+В налаштуваннях vbox’а додаємо мережевий адаптер &lsquo;vboxnet0&rsquo; в розділі мережі хосту. В налаштуваннях віртуальної машини встановлюємо перший адаптер в NAT - для доступу в світ, другий адаптер - головний адаптер -&gt; vboxnet0 для доступу з хоста в гість, третій - внутріштя мережа -&gt; intnet для доступу до інших віртуальних машин" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-09-10T21:29:21+03:00" /><meta property="article:modified_time" content="2021-09-10T21:29:21+03:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://ihntk.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://ihntk.github.io/">Записничок</a>
+            
+            <span class="title-sub">Різні замітки.</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://ihntk.github.io/post/server/">Налаштування сервера</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-09-10</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;357 слів</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/nginx">nginx</a>&nbsp;<a href="/tags/ssh">ssh</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <h2 id="налаштування-віртуальної-машини">Налаштування віртуальної машини</h2>
+<p>В налаштуваннях vbox’а додаємо мережевий адаптер &lsquo;vboxnet0&rsquo; в розділі мережі хосту. В налаштуваннях віртуальної машини встановлюємо перший адаптер в NAT - для доступу в світ, другий адаптер - головний адаптер -&gt; vboxnet0 для доступу з хоста в гість, третій - внутріштя мережа -&gt; intnet для доступу до інших віртуальних машин</p>
+<p>в гості налаштовуємо <code>/etc/rc.d/rc.inet1.conf:</code><br>
+eth0 -&gt; dhcp<br>
+eth1 -&gt; address 192.168.56.10 netmask 255.255.255.0 # IP scope 192.168.56.* was set in VistualBox Network Settings into interface vboxnet0</p>
+<pre><code>sudo rm /etc/udev/rules.d/70-persistent-net.rules
+reboot
+</code></pre>
+<h2 id="налаштування-git">Налаштування git</h2>
+<p>створюємо групу git, користувача git:git, додаємо потрібних корисувачів до групи git, створюємо каталог /opt/git з відповідними правами</p>
+<h2 id="налаштування-apache">Налаштування apache</h2>
+<p>див Apache HTTP Server - ArchWiki<br>
+<code>/etc/httpd/httpd.conf</code> - файл конфігурації<br>
+<code>/srv/httpd/htdocs</code> - DocumentRoot<br>
+<code>/etc/httpd/extra/httpd-vhosts.conf</code> - файл конфігурації віртуальних хостів</p>
+<h3 id="віртуальні-хости">Віртуальні хости</h3>
+<p>в http.conf потрібно розкоментувати стрічку
+Virtual hosts
+Include /etc/httpd/extra/httpd-vhosts.conf
+і налаштувати хости в <code>/etc/httpd/extra/httpd-vhosts.conf</code>
+Для можливості керування кожним хостом окремо можна створити каталог /etc/httpd/vhosts і в ньому розмістити файли конфігурації для кожного хоста. Потім внести їх до http.conf
+#Enabled Vhosts:
+Include conf/vhosts/domainname1.dom
+Include conf/vhosts/domainname2.dom
+&hellip;
+і при необхідності включати і виключати їх</p>
+<h2 id="налаштування-nginx">Налаштування nginx</h2>
+<p><a href="https://wiki.archlinux.org/title/nginx" target="_blank">nginx - ArchWiki</a></p>
+<p>В роутері налаштовуємо DNS для потрібного сайту<br>
+В каталозі <code>/etc/nginx/sites-available</code> створюємо файл <code>sitename.dom</code> і заповнюємо його:</p>
+<pre><code>server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/sitename.dom;
+    index index.html;
+    server_name sitename.dom;
+    location / {
+            try_files $uri $uri/ =404;
+    }
+}
+</code></pre>
+<p>В <code>/var/www/sitename.dom/</code> розміщуємо сайт з контентом<br>
+Щоб на веб-сторінці відобразити файлову систему, потрібно в розділі <code>location</code> вказати каталог, який буде відображатися (<code>/</code>, <code>/some/dir</code>) і вказати <code>autoindex on</code>:</p>
+<pre><code>server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/site_with_fs.dom;
+    index index.html;
+    server_name site_with_fs.dom;
+    location / {
+            autoindex on;
+    }
+}
+</code></pre>
+<h2 id="sshfs">SSHFS</h2>
+<p><a href="https://wiki.archlinux.org/title/SSHFS" target="_blank">SSHFS - ArchWiki</a></p>
+<p>На сервері і клієнті повинен бути встановлений <code>openssh</code></p>
+<h3 id="на-клієнті">на клієнті:</h3>
+<p>встановлюємо <code>pacman -S sshfs</code><br>
+генеруємо ключ для користувача <code>$ ssh-keygen</code> і відправляємо його на сервер<br>
+<code>$ ssh-copy-id server.dom</code><br>
+повторюємо для суперрута <code># ssh-keygen</code> і <code># ssh-copy-id user@server.dom</code></p>
+<h3 id="підключаємо-вручну">Підключаємо вручну:</h3>
+<pre><code>sshfs [user@]server.dom:[dir] mountpoint [options]
+</code></pre>
+<h3 id="підключення-автоматично-за-вимогою">Підключення автоматично за вимогою:</h3>
+<p>до <code>/etc/fstab</code> додаємо стрічку (myuser замінити на нік свого користувача)</p>
+<pre><code>myuser@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/myuser/.ssh/id_rsa,allow_other,reconnect 0 0
+</code></pre>
+<p>можна спробувати додати до опцій монтування параметр <code>x-systemd.idle-timeout=1min</code>, який відмонтовує фс через 1хв простою (не знаю, чи потрібно це тут, підглянув у вікі про nfs)</p>
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#налаштування-віртуальної-машини">Налаштування віртуальної машини</a></li>
+    <li><a href="#налаштування-git">Налаштування git</a></li>
+    <li><a href="#налаштування-apache">Налаштування apache</a>
+      <ul>
+        <li><a href="#віртуальні-хости">Віртуальні хости</a></li>
+      </ul>
+    </li>
+    <li><a href="#налаштування-nginx">Налаштування nginx</a></li>
+    <li><a href="#sshfs">SSHFS</a>
+      <ul>
+        <li><a href="#на-клієнті">на клієнті:</a></li>
+        <li><a href="#підключаємо-вручну">Підключаємо вручну:</a></li>
+        <li><a href="#підключення-автоматично-за-вимогою">Підключення автоматично за вимогою:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#налаштування-віртуальної-машини">Налаштування віртуальної машини</a></li>
+    <li><a href="#налаштування-git">Налаштування git</a></li>
+    <li><a href="#налаштування-apache">Налаштування apache</a>
+      <ul>
+        <li><a href="#віртуальні-хости">Віртуальні хости</a></li>
+      </ul>
+    </li>
+    <li><a href="#налаштування-nginx">Налаштування nginx</a></li>
+    <li><a href="#sshfs">SSHFS</a>
+      <ul>
+        <li><a href="#на-клієнті">на клієнті:</a></li>
+        <li><a href="#підключаємо-вручну">Підключаємо вручну:</a></li>
+        <li><a href="#підключення-автоматично-за-вимогою">Підключення автоматично за вимогою:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023
+                <a href="https://ihntk.github.io/">Ihor</a>
+                
+                | Працює на <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

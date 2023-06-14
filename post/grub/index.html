@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.112.3">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Grub - Записничок</title>
+
+
+<meta name="author" content="Ihor" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="linux, boot" />
+
+
+<meta property="og:title" content="Grub" />
+<meta name="twitter:title" content="Grub" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ihntk.github.io/post/grub/" /><meta property="og:description" content="Arch wiki
+Установка в UEFI
+Потрібно установити пакети grub і efibootmgr.
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду
+# grub-install
+" />
+<meta name="twitter:description" content="Arch wiki
+Установка в UEFI
+Потрібно установити пакети grub і efibootmgr.
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду
+# grub-install
+" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-08-21T17:11:08+03:00" /><meta property="article:modified_time" content="2021-08-21T17:11:08+03:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://ihntk.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://ihntk.github.io/">Записничок</a>
+            
+            <span class="title-sub">Різні замітки.</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://ihntk.github.io/post/grub/">Grub</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-08-21</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;334 слів</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/boot">boot</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p><a href="https://wiki.archlinux.org/title/GRUB_%28%d0%a0%d1%83%d1%81%d1%81%d0%ba%d0%b8%d0%b9%29" target="_blank">Arch wiki</a></p>
+<h2 id="установка-в-uefi">Установка в UEFI</h2>
+<p>Потрібно установити пакети grub і efibootmgr.<br>
+Якщо OS завантажена в режимі UEFI, системний завантажувальний розділ EFI змонтований в /boot/efi, то для установки завантажувача потрібно виконати команду</p>
+<pre><code># grub-install
+</code></pre>
+<p>Програма згенерує EFI-додаток, скопіює його в /boot/efi/EFI/arch/grubx64.efi, файли завантажувача запише в /boot/grub/, і спробує за допомогою efibootmgr записати в змінну UEFI завантажувальний запис з посиланням на \EFI\arch\grubx64.efi</p>
+<h3 id="можливі-параметри">Можливі параметри</h3>
+<pre><code>--boot-directory=/path/to/boot - вказує шлях в якому буде розміщений каталог grub/ і, якщо окремо не вказано, каталог монтування завантажувального роздулу EFI (за умовчанням /boot)
+--efi-directory=/path/to/efi - вказує каталог монтування завантажувального роздулу EFI
+--bootloader-id=arch - вказує каталог,в який запишеться efi-додаток (\EFI\arch\grubx64.efi)
+--removable - efi-додаток запишеться в \EFI\BOOT\ і efibootmgr не зробить запис до змінної UEFI, потрібно для флешок
+</code></pre>
+<p>Якщо система завантажена в legacy BIOS, потрібно явно вказати, що grub повинен створити завантажувач для UEFI за допомогою параметра target</p>
+<pre><code>--target=x86_64-efi
+</code></pre>
+<p>при цьому efibootmgr також не викликається</p>
+<h2 id="установка-в-legacy-bios">Установка в legacy BIOS</h2>
+<p>Grub завантажується в 2 етапи: Спочатку зчитується boot.img з першого завантажувального блоку, який завантажує core.img з додаткового розділу чи спеціально відведеного місця.<br>
+Якщо носій розмічено в gpt, потрібно створити розділ типу BIOS boot partition розміром 1Mb. Якщо - в mbr потрібно забезпечити пусте місце розміром 1Mb між першим завантажувальним блоком і першим розділом (fdisk робить це автоматично)<br>
+З системи завантаженої в UEFI вказуємо target</p>
+<pre><code># grub-install --target=i386-pc /dev/sdw
+</code></pre>
+<h2 id="установка-на-флешку-для-uefi-і-для-legacy">Установка на флешку для UEFI і для legacy</h2>
+<p>Флешку розмічаємо в gpt, створюємо розділ ESP, розділ BIOS boot partition, і основний розділ для OS. Форматуємо ESP в vfat, основний розділ - ext4 чи f2fs, Bios boot - не форматуємо.<br>
+Монтуємо основний розділ в <code>/mnt/os</code>, монтуємо ESP в <code>/mnt/esp</code>, розпаковуємо образ, переносимо каталог EFI в <code>/mnt/esp</code> і виконуємо команди:</p>
+<pre><code>grub-install --target=i386-pc --boot-directory=/mnt/os/arch/boot /dev/sdw
+grub-install --target=x86_64-efi --boot-directory=/mnt/os/arch/boot --efi-directory=/mnt/esp --removable
+</code></pre>
+<p>Якщо ESP змонтувати в <code>/mnt/os/arch/boot/efi</code>, то параметр <code>efi-directory</code> можна не вказувати</p>
+<h2 id="налаштування">Налаштування</h2>
+<p>Налаштування конфігуратора знаходяться в файлі <code>/etc/default/grub</code> і в каталозі <code>/etc/grub.d/</code>. Головний файл конфігурації розміщений в <code>/boot/grub/grub.cfg</code>. Для автоматичного генерування цього файлу потрібно виконати команду</p>
+<pre><code># grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>Шоб конфігуратор визначив OS відмінні від linux потрібно встановити os-prober</p>
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#установка-в-uefi">Установка в UEFI</a>
+      <ul>
+        <li><a href="#можливі-параметри">Можливі параметри</a></li>
+      </ul>
+    </li>
+    <li><a href="#установка-в-legacy-bios">Установка в legacy BIOS</a></li>
+    <li><a href="#установка-на-флешку-для-uefi-і-для-legacy">Установка на флешку для UEFI і для legacy</a></li>
+    <li><a href="#налаштування">Налаштування</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Сторінки</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Посилання</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/ihntk" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Теги</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/boot/">boot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dev/">dev</a>
+            </span>
+            
+            <span>
+                <a href="/tags/download/">download</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/kodi/">kodi</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nginx/">nginx</a>
+            </span>
+            
+            <span>
+                <a href="/tags/passwd/">passwd</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ssh/">ssh</a>
+            </span>
+            
+            <span>
+                <a href="/tags/torrent/">torrent</a>
+            </span>
+            
+            <span>
+                <a href="/tags/website/">website</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Зміст</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#установка-в-uefi">Установка в UEFI</a>
+      <ul>
+        <li><a href="#можливі-параметри">Можливі параметри</a></li>
+      </ul>
+    </li>
+    <li><a href="#установка-в-legacy-bios">Установка в legacy BIOS</a></li>
+    <li><a href="#установка-на-флешку-для-uefi-і-для-legacy">Установка на флешку для UEFI і для legacy</a></li>
+    <li><a href="#налаштування">Налаштування</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023
+                <a href="https://ihntk.github.io/">Ihor</a>
+                
+                | Працює на <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

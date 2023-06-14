@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>download on Записничок</title>
+    <link>https://ihntk.github.io/tags/download/</link>
+    <description>Recent content in download on Записничок</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Aug 2021 16:39:50 +0300</lastBuildDate><atom:link href="https://ihntk.github.io/tags/download/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wget</title>
+      <link>https://ihntk.github.io/post/wget/</link>
+      <pubDate>Sat, 21 Aug 2021 16:39:50 +0300</pubDate>
+      
+      <guid>https://ihntk.github.io/post/wget/</guid>
+      <description>&lt;h2 id=&#34;скачуємо-список-з-fsto&#34;&gt;Скачуємо список з fs.to&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;export LANG=«uk_UA.UTF8» (export LANG=«ru_RU.UTF8»)
+wget -i /path/to/url-file --restrict-file-names=unix,nocontrol
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;в результаті маємо скачані файли в назвах яких замість пробілів плюсики :)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
